@@ -9,6 +9,8 @@ from datetime import datetime
 import mysql.connector
 
 # Connecting the database
+
+
 # Access localhost
 db = mysql.connector.connect (
     host = "localhost",
@@ -87,8 +89,8 @@ while True:
             status_motor = False
             status_lamp = False
         print(
-            "Temp: {:.1f} F / {:.1f} C    Humidity: {}% ".format(
-                temperature_f, temperature_c, humidity
+            "Temp: {:.1f} C    Humidity: {}% ".format(
+                temperature_c, humidity
             )
         )
         
