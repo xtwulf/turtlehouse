@@ -7,14 +7,16 @@ from time import sleep
 from datetime import date
 from datetime import datetime
 import mysql.connector
-import json
+
 
 # Connecting the database
 
-# json for db access
-json_db_access = '{"local" : [{"host" : "localhost","user" : "testbenutzer","password" : "raspberry","database" : "testdatenbank"}]}'
+# dictionary for db access
+db_access = {
+    "local" : {"host" : "localhost", "user" : "testbenutzer", "password" : "raspberry", "database" : "testdatenbank"},
+    "freemysql" : {"host" : "sql11.freemysqlhosting.net", "user" : "sql11436827", "password" : "U7m8bK988l", "database" : "sql11436827"}
+}
 
-db_access = json.loads(json_db_access)
 
 
 
