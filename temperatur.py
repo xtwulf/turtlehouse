@@ -13,10 +13,10 @@ import json
 
 # json for db access
 db_access = {
-    "host" = "localhost",
-    "user" = "testbenutzer",
-    "password" = "raspberry",
-    "database" = "testdatenbank"
+    "host" : "localhost",
+    "user" : "testbenutzer",
+    "password" : "raspberry",
+    "database" : "testdatenbank"
     }
 
 
