@@ -66,7 +66,7 @@ while True:
     try:
         # Print the values to the serial port
         temperature_c = dhtDevice.temperature
-        temperature_f = temperature_c * (9 / 5) + 32
+        #temperature_f = temperature_c * (9 / 5) + 32
         humidity = dhtDevice.humidity
         if temperature_c >= temp_max:
             print('Attention: temperature has reached max level!')
