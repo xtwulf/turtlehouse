@@ -7,8 +7,19 @@ from time import sleep
 from datetime import date
 from datetime import datetime
 import mysql.connector
+import json
 
 # Connecting the database
+
+# json for db access
+db_access = {
+    "host" = "localhost",
+    "user" = "testbenutzer",
+    "password" = "raspberry",
+    "database" = "testdatenbank"
+    }
+
+
 
 
 # Access localhost
