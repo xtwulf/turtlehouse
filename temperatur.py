@@ -12,13 +12,9 @@ import json
 # Connecting the database
 
 # json for db access
-db_access = {
-    "host" : "localhost",
-    "user" : "testbenutzer",
-    "password" : "raspberry",
-    "database" : "testdatenbank"
-    }
+json_db_access = '{"local" : [{"host" : "localhost","user" : "testbenutzer","password" : "raspberry","database" : "testdatenbank"}]}'
 
+db_access = json.loads(json_db_access)
 
 
 
