@@ -10,17 +10,20 @@ import mysql.connector
 
 # Connecting the database
 # Access localhost
-#     host = "localhost",
-#     user = "testbenutzer",
-#     password = "raspberry",
-#     database = "testdatenbank"
-
 db = mysql.connector.connect (
-    host = "sql11.freemysqlhosting.net",
-    user = "sql11436827",
-    password = "U7m8bK988l",
-    database = "sql11436827"
+    host = "localhost",
+    user = "testbenutzer",
+    password = "raspberry",
+    database = "testdatenbank"
     )
+
+# Access Freemysqlhosting
+# db = mysql.connector.connect (
+#     host = "sql11.freemysqlhosting.net",
+#     user = "sql11436827",
+#     password = "U7m8bK988l",
+#     database = "sql11436827"
+#     )
 
 
 
