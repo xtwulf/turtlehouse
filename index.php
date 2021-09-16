@@ -2,13 +2,16 @@
 <?php
 
 
-phpinfo();
+//phpinfo();
 
 
-//session_start();
+session_start();
 
+
+
+echo ("Test");
 // Including Database connection
-// require_once "pdo.php";
+require_once "pdo.php";
 
 /*
 if (isset($_SESSION['test'])) {
