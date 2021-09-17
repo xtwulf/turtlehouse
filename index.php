@@ -22,8 +22,12 @@ if (isset($_SESSION['test'])) {
 // Query for displaying data
 //$stmt = $pdo->query("SELECT first_name, last_name, headline, user_id, profile_id FROM Profile");
 //$elements = $stmt->fetchAll(PDO::FETCH_ASSOC);
+echo ($pdo);
+$last_id = $pdo->query("SELECT MAX(ID) FROM temperature");
+echo($last_id);
 
 ?>
+
 
 
 <h1>TEST</h1>
