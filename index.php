@@ -24,10 +24,18 @@ if (isset($_SESSION['test'])) {
 // Query for displaying data
 //$stmt = $pdo->query("SELECT first_name, last_name, headline, user_id, profile_id FROM Profile");
 //$elements = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo ($pdo);
-$last_id = $pdo->query("SELECT MAX(ID) FROM temperature");
-echo($last_id);
+//echo ($pdo);
 
+
+$stmt = $pdo->query("SELECT * from temperature WHERE id = (SELECT MAX(ID) FROM temperature)");
+$last_set = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+//print_r($last_set);
+$last_temp = $last_set[0][temp];
+
+
+
+echo($last_temp);
 ?>
 
 
