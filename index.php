@@ -1,13 +1,8 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
-<!-- Das neueste kompilierte und minimierte CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Optionales Theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-<!-- Das neueste kompilierte und minimierte JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </head>
@@ -18,21 +13,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //phpinfo();
-
-
 session_start();
 
-
-
-echo ("Test");
 // Including Database connection
 require_once "pdo.php";
 
-/*
 if (isset($_SESSION['test'])) {
     echo $_SESSION['test'];
 }
-*/
 
 // Query for displaying data
 //echo ($pdo);
@@ -50,11 +38,43 @@ $settings = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 echo"Settings:";
 print_r($settings);
 echo("<br>");
+echo"Last Temp:";
+
 echo($last_temp);
+
+// logic for showing temp alert
+if ($last_temp > 25) {
+    $alert_message = "temp over max level";
+    $temp_class = "alert alert-danger";
+}
+elseif ($last_temp < 15) {
+    $alert_message = "temp under min level";
+    $temp_class = "alert alert-danger";
+}
+
+else {
+    $alert_message = "Temp ok!";
+    $temp_class = "alert alert-success";
+}
+
+
+
+
+
+
 ?>
 
 
 
-<h1>TEST</h1>
-<p class="temp">Temp:<?php echo($last_temp)?> Celsius</p>
+<h1>Turtlehouse Dashboard</h1>
+<div id="temp" class="<?php echo($temp_class)?>">
+    <p >Temp:<?php echo($last_temp)?> Celsius</p>
+    <p><?php echo($alert_message)?></p>
+    
+</div>
+
+<div>
+    
+</div>
+
 </html>
