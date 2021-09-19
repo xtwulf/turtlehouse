@@ -38,6 +38,10 @@ $settings = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 echo"Settings:";
 print_r($settings);
 echo("<br>");
+
+print_r($settings[0][max_temp]);
+
+echo("<br>");
 echo"Last Temp:";
 
 echo($last_temp);
@@ -66,11 +70,22 @@ else {
 
 
 
-<h1>Turtlehouse Dashboard</h1>
+<h1>Schildkrötenhaus Dashboard</h1>
 <div id="temp" class="<?php echo($temp_class)?>">
+    <h4>Temperatur</h2>
     <p >Temp:<?php echo($last_temp)?> Celsius</p>
     <p><?php echo($alert_message)?></p>
     
+</div>
+
+<div id ="" class="">
+    <h4>Lampenstatus</h4>
+
+</div>
+
+<div id ="" class="">
+    <h4>Klappenstatus</h4>
+
 </div>
 
 <div>

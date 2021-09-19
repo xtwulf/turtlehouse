@@ -1,5 +1,5 @@
 div {
-#border: 1px solid red;
+border: 1px solid black;
 }
 
 .temp_alert {
@@ -9,3 +9,10 @@ color:red
 .temp_ok {
 color: green
 }
+
+div#temp {
+width: 200px;
+height: 150px;
+}
+
+
