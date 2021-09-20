@@ -538,7 +538,7 @@ else {
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Tiefste Temperatur</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Klappe manuell</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
                       <div class="mt-2 mb-0 text-muted text-xs">
                         <span class="text-info mr-2">12.01.2021</span>
