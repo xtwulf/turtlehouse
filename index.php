@@ -546,8 +546,14 @@ else {
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-snowflake fa-2x text-info"></i>
-                      
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                            <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                        </div>
                     </div>
                   </div>
                 </div>
