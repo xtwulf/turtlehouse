@@ -16,9 +16,13 @@
 </head>
 
 <?php
+$debug_mode = False;
+if ($debug_mode) {
+  
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+}
 
 //phpinfo();
 session_start();
@@ -37,36 +41,50 @@ if (isset($_SESSION['test'])) {
 $stmt1 = $pdo->query("SELECT * from temperature WHERE id = (SELECT MAX(ID) FROM temperature)");
 $last_set = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
-print_r($last_set);
+if ($debug_mode) print_r($last_set);
 $last_temp = $last_set[0][temp];
 
 $stmt2 = $pdo->query("SELECT * from settings");
 $settings = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
+$max_temp = $settings[0][max_temp];
+$min_temp = $settings[0][min_temp];
+
+if ($debug_mode) {
 echo"Settings:";
 print_r($settings);
 echo("<br>");
 
 print_r($settings[0][max_temp]);
 
+
 echo("<br>");
 echo"Last Temp:";
-
 echo($last_temp);
 
-// logic for showing temp alert
-if ($last_temp > 25) {
-    $alert_message = "temp over max level";
-    $temp_class = "alert alert-danger";
+echo("<br>");
+echo"Max Temp:";
+echo($max_temp);
+
+echo("<br>");
+echo"Min Temp:";
+echo($min_temp);
+
+
 }
-elseif ($last_temp < 15) {
+// logic for showing temp alert
+if ($last_temp > $max_temp) {
+    $alert_message = "temp over max level";
+    $temp_class = "text-danger";
+}
+elseif ($last_temp < $min_temp) {
     $alert_message = "temp under min level";
-    $temp_class = "alert alert-danger";
+    $temp_class = "text-danger";
 }
 
 else {
     $alert_message = "Temp ok!";
-    $temp_class = "alert alert-success";
+    $temp_class = "text-success";
 }
 
 
@@ -388,16 +406,15 @@ else {
                   <div class="row align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Temperatur</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">XXXXX</div>
-                      <!-- <div class="mt-2 mb-0 text-muted text-xs">
+                      <div class="h5 mb-0 font-weight-bold <?php echo("$temp_class")?>"><?php echo($last_temp);?></div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
                         
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span>Since last month</span>
-                       
-                      </div> -->
+                      <span class="<?php echo($temp_class);?>"><?php echo($alert_message);?></span>
+                        
+                      </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-thermometer-three-quarters fa-2x text-success"></i>
+                      <i class="fas fa-thermometer-three-quarters fa-2x <?php echo($temp_class);?>"></i>
                       <!--
                       <i class="fas fa-calendar fa-2x text-primary"></i>
                       -->
