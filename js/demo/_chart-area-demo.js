@@ -32,11 +32,11 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Jan","Jan","Jan","Jan","Jan","Jan","Jan","Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov","Nov", "Dec"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [{
       label: "Earnings",
       lineTension: 0.3,
-      backgroundColor: "rgba(78, 115, 223, 0.1)",
+      backgroundColor: "rgba(78, 115, 223, 0.5)",
       borderColor: "rgba(78, 115, 223, 1)",
       pointRadius: 3,
       pointBackgroundColor: "rgba(78, 115, 223, 1)",
@@ -46,7 +46,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [19, 10000, 17000, 10240,12000, 10000, 17000, 10240,12000, 10000, 17000, 10240, 10000, 10000, 10000, 10000, 20000, 30000, 25000, 40000],
+      data: [12000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 20000, 30000, 25000, 40000],
     }],
   },
   options: {
@@ -65,8 +65,8 @@ var myLineChart = new Chart(ctx, {
           unit: 'date'
         },
         gridLines: {
-          display: true,
-          drawBorder: true
+          display: false,
+          drawBorder: false
         },
         ticks: {
           maxTicksLimit: 7
