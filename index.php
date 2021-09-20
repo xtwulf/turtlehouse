@@ -498,8 +498,8 @@ else {
                     </div>
                     <div class="col-auto">
                         <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                            <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                            <input oncklick = "changeElement()" type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1">Automatisch</label>
                         </div>
                     </div>
                   </div>

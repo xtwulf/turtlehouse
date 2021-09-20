@@ -83,3 +83,10 @@ $('.popover-dismiss').popover({
 var version = document.getElementById('version-ruangadmin');
 
 version.innerHTML = "Version 1.1";
+
+// Function for changing the switch element
+function changeElement () {
+  x = document.getElementById('customSwitch1');
+  console.log(x);
+
+}
