@@ -466,7 +466,7 @@ else {
               </div>
             </div>
 
-            <!-- Max Temperatur Card -->
+            <!-- Card: Max Temperatur -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
@@ -488,7 +488,7 @@ else {
               </div>
             </div>
 
-            <!-- Min Temperatur Card -->
+            <!-- Card: Min Temperatur -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
@@ -509,6 +509,52 @@ else {
                 </div>
               </div>
             </div>
+
+            <!-- Card: Manual switch for lamp -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Tiefste Temperatur</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-info mr-2">12.01.2021</span>
+                        <!-- <span>Since yesterday</span> -->
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-snowflake fa-2x text-info"></i>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card: Manual switch cover -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Tiefste Temperatur</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-info mr-2">12.01.2021</span>
+                        <!-- <span>Since yesterday</span> -->
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-snowflake fa-2x text-info"></i>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
 
 
             <!-- Area Chart -->
