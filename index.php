@@ -480,7 +480,7 @@ else {
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-temperature-high fa-2x text-danger"></i>
+                      <i class="fas fa-sun fa-2x text-danger"></i>
                       
                     </div>
                   </div>
@@ -502,7 +502,7 @@ else {
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-temperature-low fa-2x text-info"></i>
+                      <i class="fas fa-snowflake fa-2x text-info"></i>
                       
                     </div>
                   </div>
