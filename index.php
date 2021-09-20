@@ -488,21 +488,41 @@ else {
               </div>
             </div>
 
-            <!-- Card: Min Temperatur -->
+            <!-- Card: Choose control method -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Tiefste Temperatur</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-info mr-2">12.01.2021</span>
-                        <!-- <span>Since yesterday</span> -->
-                      </div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Steuerung</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-snowflake fa-2x text-info"></i>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked>
+                            <label class="form-check-label" for="inlineCheckbox1">automatisch</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox3">manuell</label>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- Card: Manual switch for cover -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Schalter Deckel</div>
+                    </div>
+                    <div class="col-auto">
+                      
                       
                     </div>
                   </div>
@@ -516,44 +536,12 @@ else {
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Tiefste Temperatur</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-info mr-2">12.01.2021</span>
-                        <!-- <span>Since yesterday</span> -->
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-snowflake fa-2x text-info"></i>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Schalter Lampe</div>
                       
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card: Manual switch cover -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Klappe manuell</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-info mr-2">12.01.2021</span>
-                        <!-- <span>Since yesterday</span> -->
-                      </div>
-                    </div>
                     <div class="col-auto">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
-                        </div>
+                      
+                      
                     </div>
                   </div>
                 </div>
