@@ -496,9 +496,9 @@ else {
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Steuerung</div>
                     </div>
-                    <div class="col-auto">
-                        <div class="custom-control custom-switch">
-                            <input oncklick = "changeElement()" type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <div class="col-auto" oncklick="changeElement()">
+                        <div class="custom-control custom-switch" oncklick = "changeElement()">
+                            <input  type="checkbox" class="custom-control-input" id="customSwitch1">
                             <label class="custom-control-label" for="customSwitch1">Automatisch</label>
                         </div>
                     </div>

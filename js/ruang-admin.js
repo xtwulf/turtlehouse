@@ -88,5 +88,6 @@ version.innerHTML = "Version 1.1";
 function changeElement () {
   x = document.getElementById('customSwitch1');
   console.log(x);
+  console.log("Juhu");
 
 }
