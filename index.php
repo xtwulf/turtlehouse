@@ -13,8 +13,9 @@
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <script language = "javascript" src = "js/custom.js" type = "text/javascript"></script>
 </head>
-
+  
 <?php
 $debug_mode = False;
 if ($debug_mode) {
@@ -496,23 +497,24 @@ else {
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Steuerung</div>
                     </div>
-                    <div class="col-auto" oncklick="changeElement()">
-                        <div class="custom-control custom-switch" oncklick = "changeElement()">
+                    <div class="col-auto">
+                      
+<!--
+                        <div onclick = "checkElement(label_switch1)" class="custom-control custom-switch">
                             <input  type="checkbox" class="custom-control-input" id="customSwitch1">
-                            <label class="custom-control-label" for="customSwitch1">Automatisch</label>
+                            <label id = "label_switch1" class="custom-control-label" for="customSwitch1">Manuell</label>
                         </div>
+-->
+                        
+                        <button id = "button1" onclick = "checkElement('button1')">Automatisch</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <button onclick="getElementById('demo').innerHTML = Date()">What is the time?</button>
-
-
-
             <!-- Card: Manual switch for cover -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div id = "card1" class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -529,7 +531,7 @@ else {
             </div>
 
             <!-- Card: Manual switch for lamp -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div id = "card2" class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
