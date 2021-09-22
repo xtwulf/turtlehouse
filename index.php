@@ -17,7 +17,7 @@
 </head>
   
 <?php
-$debug_mode = True;
+$debug_mode = False;
 if ($debug_mode) {
   
 ini_set('display_errors', 1);
@@ -42,7 +42,6 @@ if (isset($_SESSION['test'])) {
 $stmt1 = $pdo->query("SELECT * from temperature WHERE id = (SELECT MAX(ID) FROM temperature)");
 $last_set = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
-if ($debug_mode) print_r($last_set);
 $last_temp = $last_set[0][temp];
 
 $stmt2 = $pdo->query("SELECT * from settings");
@@ -51,7 +50,34 @@ $settings = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 $limit_max = $settings[0][max_temp];
 $limit_min = $settings[0][min_temp];
 
+// searching for max and min temperatures
+$stmt = $pdo->query("SELECT MAX(temp) from temperature");
+$test = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$max_temp = $test[0]["MAX(temp)"];
+
+
+$stmt = $pdo->query("SELECT MIN(temp) from temperature");
+$test = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$min_temp = $test[0]["MIN(temp)"];
+
+
+// getting date and time for last lowest Temp
+$stmt = $pdo->query("SELECT `date` from temperature WHERE ID = (SELECT MAX(`id`) FROM temperature WHERE `temp` = (SELECT MIN(`temp`) FROM `temperature`))");
+$test = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$date_min_temp = substr($test[0]["date"], 0, -15);
+$time_min_temp = substr($test[0]["date"], 10, -7);
+
+// getting date and time for last highest temp
+$stmt = $pdo->query("SELECT `date` from temperature WHERE ID = (SELECT MAX(`id`) FROM temperature WHERE `temp` = (SELECT MAX(`temp`) FROM `temperature`))");
+$test = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$date_max_temp = substr($test[0]["date"], 0, -15);
+$time_max_temp = substr($test[0]["date"], 10, -7);
+
+
+//Displaying Debug data, if debug mode is on
 if ($debug_mode) {
+
+print_r($last_set);
 echo"Settings:";
 print_r($settings);
 echo("<br>");
@@ -73,21 +99,25 @@ echo($limit_min);
 echo("<br>");
 
 
-// searching for max and min temperatures
-$stmt = $pdo->query("SELECT MAX(temp) from temperature");
-$test = $stmt->fetchAll(PDO::FETCH_ASSOC);
 echo ("Max Temp: ");
 echo("<br>");
 var_dump($test[0]);
 echo("<br>");
 echo ($test[0]["MAX(temp)"]);
 
-// getting date for last min Temp
-$stmt = $pdo->query("SELECT `date` from temperature WHERE ID = (SELECT MAX(`id`) FROM temperature WHERE `temp` = (SELECT MIN(`temp`) FROM `temperature`))");
-$test = $stmt->fetchAll(PDO::FETCH_ASSOC);
-var_dump($test)
 
+echo("<br>");
+#print_r ($test[0]["date"]);
+
+
+echo("<br>");
+echo ($date_min_temp);
+echo("<br>");
+echo ($time_min_temp);
+echo("<br>");
 }
+
+
 // logic for showing temp alert
 if ($last_temp > $limit_max) {
     $alert_message = "temp over max level";
@@ -489,9 +519,9 @@ else {
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Höchste Temperatur</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">2245</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($max_temp)?></div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-info mr-2">12.08.2021</span>
+                        <span class="text-danger mr-2"><?php echo ($date_max_temp . " / " . $time_max_temp)?></span>
                         <!-- <span>Since yesterday</span> -->
                       </div>
                     </div>
@@ -511,9 +541,9 @@ else {
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Niedrigste Temperatur</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">2245</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo($min_temp)?></div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-info mr-2">12.08.2021</span>
+                        <span class="text-info mr-2"><?php echo ($date_min_temp . " / " . $time_min_temp)?></span>
                         <!-- <span>Since yesterday</span> -->
                       </div>
                     </div>

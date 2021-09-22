@@ -41,8 +41,9 @@ db = mysql.connector.connect (
 print(db)
 mycursor = db.cursor()
 
-sql = "TRUNCATE temperature"
-mycursor.execute(sql)
+## Statment for clearing complete DB
+# sql = "TRUNCATE temperature"
+# mycursor.execute(sql)
 
 now = datetime.now()
 date = date.today()
