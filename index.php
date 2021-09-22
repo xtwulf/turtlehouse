@@ -72,6 +72,8 @@ echo"Min Limit:";
 echo($limit_min);
 echo("<br>");
 
+
+// searching for max and min temperatures
 $stmt = $pdo->query("SELECT MAX(temp) from temperature");
 $test = $stmt->fetchAll(PDO::FETCH_ASSOC);
 echo ("Max Temp: ");
@@ -79,6 +81,11 @@ echo("<br>");
 var_dump($test[0]);
 echo("<br>");
 echo ($test[0]["MAX(temp)"]);
+
+// getting date for last min Temp
+$stmt = $pdo->query("SELECT `date` from temperature WHERE ID = (SELECT MAX(`id`) FROM temperature WHERE `temp` = (SELECT MIN(`temp`) FROM `temperature`))");
+$test = $stmt->fetchAll(PDO::FETCH_ASSOC);
+var_dump($test)
 
 }
 // logic for showing temp alert
