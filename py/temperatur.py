@@ -83,19 +83,19 @@ while True:
             print('Attention: temperature has reached max level!')
             GPIO.output(20, GPIO.HIGH)
             GPIO.output(21, GPIO.LOW)
-            status_motor = True
+            status_cover = True
             status_lamp = False
         if temperature_c <= temp_min:
             print('Attention: temperature is too low!')
             GPIO.output(20, GPIO.HIGH)
             GPIO.output(21, GPIO.LOW)
-            status_motor = False
+            status_cover = False
             status_lamp = True
         if (temperature_c < temp_max) and (temperature_c > temp_min):
             print('Temp is ok')
             GPIO.output(20, GPIO.LOW)
             GPIO.output(21, GPIO.HIGH)
-            status_motor = False
+            status_cover = False
             status_lamp = False
         print(
             "Temp: {:.1f} C    Humidity: {}% ".format(
@@ -114,10 +114,10 @@ while True:
         dhtDevice.exit()
         raise error
     
-    sql = "INSERT INTO temperature (date, temp, humidity, status_motor, status_lamp) VALUES (%s, %s, %s, %s, %s)"
-    #status_motor = True
+    sql = "INSERT INTO temperature (date, temp, humidity, status_cover, status_lamp) VALUES (%s, %s, %s, %s, %s)"
+    #status_cover = True
     #status_lamp = False
-    val = (now,temperature_c,humidity, status_motor, status_lamp)
+    val = (now,temperature_c,humidity, status_cover, status_lamp)
     mycursor.execute(sql, val)
 
     db.commit()

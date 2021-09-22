@@ -17,7 +17,7 @@
 </head>
   
 <?php
-$debug_mode = False;
+$debug_mode = True;
 if ($debug_mode) {
   
 ini_set('display_errors', 1);
@@ -48,8 +48,8 @@ $last_temp = $last_set[0][temp];
 $stmt2 = $pdo->query("SELECT * from settings");
 $settings = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-$max_temp = $settings[0][max_temp];
-$min_temp = $settings[0][min_temp];
+$limit_max = $settings[0][max_temp];
+$limit_min = $settings[0][min_temp];
 
 if ($debug_mode) {
 echo"Settings:";
@@ -64,21 +64,29 @@ echo"Last Temp:";
 echo($last_temp);
 
 echo("<br>");
-echo"Max Temp:";
-echo($max_temp);
+echo"Max Limit:";
+echo($limit_max);
 
 echo("<br>");
-echo"Min Temp:";
-echo($min_temp);
+echo"Min Limit:";
+echo($limit_min);
+echo("<br>");
 
+$stmt = $pdo->query("SELECT MAX(temp) from temperature");
+$test = $stmt->fetchAll(PDO::FETCH_ASSOC);
+echo ("Max Temp: ");
+echo("<br>");
+var_dump($test[0]);
+echo("<br>");
+echo ($test[0]["MAX(temp)"]);
 
 }
 // logic for showing temp alert
-if ($last_temp > $max_temp) {
+if ($last_temp > $limit_max) {
     $alert_message = "temp over max level";
     $temp_class = "text-danger";
 }
-elseif ($last_temp < $min_temp) {
+elseif ($last_temp < $limit_min) {
     $alert_message = "temp under min level";
     $temp_class = "text-danger";
 }
