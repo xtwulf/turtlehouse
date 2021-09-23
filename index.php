@@ -17,7 +17,7 @@
 </head>
   
 <?php
-$debug_mode = False;
+$debug_mode = True;
 if ($debug_mode) {
   
 ini_set('display_errors', 1);
@@ -39,16 +39,17 @@ if (isset($_SESSION['test'])) {
 //echo ($pdo);
 
 
-$stmt1 = $pdo->query("SELECT * from temperature WHERE id = (SELECT MAX(ID) FROM temperature)");
-$last_set = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $pdo->query("SELECT * from temperature WHERE id = (SELECT MAX(ID) FROM temperature)");
+$last_set = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $last_temp = $last_set[0][temp];
 
-$stmt2 = $pdo->query("SELECT * from settings");
-$settings = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $pdo->query("SELECT * from settings");
+$settings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $limit_max = $settings[0][max_temp];
 $limit_min = $settings[0][min_temp];
+$control = $settings[0][control];
 
 // searching for max and min temperatures
 $stmt = $pdo->query("SELECT MAX(temp) from temperature");
@@ -573,8 +574,19 @@ else {
                             <label id = "label_switch1" class="custom-control-label" for="customSwitch1">Manuell</label>
                         </div>
 -->
+
+                        <?php
+                        // Depending on control status the Button text ist choosen
+                        if ($control == 0) {
+                        echo ('<button id = "button1" onclick = "checkElement(\'button1\')">Automatisch</button>');
                         
-                        <button id = "button1" onclick = "checkElement('button1')">Automatisch</button>
+                        }
+                        else {
+                        echo ('<button id = "button1" onclick = "checkElement(\'button1\')">Manuell</button>');
+                          
+                        }
+                        
+                        ?>
                     </div>
                   </div>
                 </div>
