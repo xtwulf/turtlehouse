@@ -142,6 +142,7 @@ else {
 ?>
 
 <body id="page-top">
+  <div class="temp_data" id="temp_data"></div>
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar" >
