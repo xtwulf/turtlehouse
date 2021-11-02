@@ -28,11 +28,20 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // get temp data from id Element
-var temp_data = document.getElementById('temp_data');
+var temp_data = document.getElementById('temp_data').innerHTML;
 console.log(temp_data);
-break;
+console.log (typeof temp_data);
+const test = temp_data.split(",");
+
+console.log(typeof test);
+console.log(Array.from(test), x=> Number(x));
+
+
 
 // Area Chart Example
+var temp_data = [19, 22, 10, 10,12, 10, 17, 10,12, 10, 17, 10, 10, 10, 10, 10, 20, 30, 25, 40]
+console.log (temp_data);
+console.log (typeof temp_data);
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
@@ -51,7 +60,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [19, 22, 17000, 10240,12000, 10000, 17000, 10240,12000, 10000, 17000, 10240, 10000, 10000, 10000, 10000, 20000, 30000, 25000, 40000],
+      data: temp_data,
     }],
   },
   options: {
