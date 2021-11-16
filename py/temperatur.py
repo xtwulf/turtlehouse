@@ -41,6 +41,7 @@ db = mysql.connector.connect (
 print(db)
 mycursor = db.cursor()
 
+
 ## Statment for clearing complete DB
 # sql = "TRUNCATE temperature"
 # mycursor.execute(sql)
@@ -49,15 +50,20 @@ now = datetime.now()
 date = date.today()
 print(date)
 
+
+
+
 GPIO.setmode(GPIO.BCM)
 
+
+### GPIO´s for LEDs are not needed in actual hardware setup
 # GPIO for green LED
-GPIO.setup(20, GPIO.OUT)
-GPIO.output(20, GPIO.LOW)
+#GPIO.setup(20, GPIO.OUT)
+#GPIO.output(20, GPIO.LOW)
 
 # GPIO for red LED
-GPIO.setup(21, GPIO.OUT)
-GPIO.output(21, GPIO.LOW)
+#GPIO.setup(21, GPIO.OUT)
+#GPIO.output(21, GPIO.LOW)
 
 # Initial the dht device, with data pin connected to:
 # dhtDevice = adafruit_dht.DHT22(board.D4)
@@ -66,6 +72,9 @@ GPIO.output(21, GPIO.LOW)
 # This may be necessary on a Linux single board computer like the Raspberry Pi,
 # but it will not work in CircuitPython.
 dhtDevice = adafruit_dht.DHT11(board.D4, use_pulseio=False)
+
+print(dhtDevice)
+
 
 temp_max = 25
 temp_min = 22
@@ -82,20 +91,20 @@ while True:
         humidity = dhtDevice.humidity
         if temperature_c >= temp_max:
             print('Attention: temperature has reached max level!')
-            GPIO.output(20, GPIO.HIGH)
-            GPIO.output(21, GPIO.LOW)
+            #GPIO.output(20, GPIO.HIGH)
+            #GPIO.output(21, GPIO.LOW)
             status_cover = True
             status_lamp = False
         if temperature_c <= temp_min:
             print('Attention: temperature is too low!')
-            GPIO.output(20, GPIO.HIGH)
-            GPIO.output(21, GPIO.LOW)
+            #GPIO.output(20, GPIO.HIGH)
+            #GPIO.output(21, GPIO.LOW)
             status_cover = False
             status_lamp = True
         if (temperature_c < temp_max) and (temperature_c > temp_min):
             print('Temp is ok')
-            GPIO.output(20, GPIO.LOW)
-            GPIO.output(21, GPIO.HIGH)
+            #GPIO.output(20, GPIO.LOW)
+            #GPIO.output(21, GPIO.HIGH)
             status_cover = False
             status_lamp = False
         print(
