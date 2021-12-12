@@ -17,7 +17,7 @@
 </head>
   
 <?php
-$debug_mode = True;
+$debug_mode = False;
 if ($debug_mode) {
   
 ini_set('display_errors', 1);
@@ -142,7 +142,7 @@ else {
 ?>
 
 <body id="page-top">
-  <div class="temp_data" id="temp_data">k k </div>
+  <span id="temp_data" style = "display: none;">19,22,10,10,12,10,17,10,12,10,17,10,10,10,10,10,20,30,25,40</span>
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar" >
