@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-      url : "/php/getdata.php",
+      url : "/turtlehouse/php/getdata.php",
       type : "GET",
       success : function(data){
         console.log(data);
