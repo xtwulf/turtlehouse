@@ -735,7 +735,8 @@ else {
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="js/Chart.min.js"></script>
-  <script type="text/javascript" src="js/linegraph.js"></script>
+  <!-- <script type="text/javascript" src="js/linegraph.js"></script> -->
+  <script type="text/javascript" src="js/linegraph_test.js"></script>
 </body>
 
 </html>
