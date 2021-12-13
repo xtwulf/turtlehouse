@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-      url : "/chartjs/followersdata.php",
+      url : "/php/followersdata.php",
       type : "GET",
       success : function(data){
         console.log(data);
