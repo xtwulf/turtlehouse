@@ -662,7 +662,7 @@ else {
                 <div class="card-body">
                   <div class="chart-area">
                     <p>Chart 2 comes here</p>
-                    <!-- <canvas id="myAreaChart"></canvas> -->
+                    <canvas id="mycanvas"></canvas>
                   </div>
                 </div>
               </div>
