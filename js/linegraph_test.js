@@ -3,12 +3,13 @@ $(document).ready(function(){
       url : "/turtlehouse/php/getdata.php",
       type : "GET",
       success : function(data){
-        console.log(data);
+        console.log('Data: ' + data);
         data = JSON.parse(data);
   
         
         var date = [];
         var temp = [];
+        var humidity = [];
         
         var userid = [];
         var facebook_follower = [];
@@ -17,8 +18,10 @@ $(document).ready(function(){
   
         for(var i in data) {
           
-          date.push("Datum " + data[i].date);
+          date.push(data[i].date);
           temp.push(data[i].temp);
+          humidity.push(data[i].humidity);
+          
           /*
           userid.push("UserID " + data[i].userid);
           facebook_follower.push(data[i].facebook);
@@ -39,7 +42,18 @@ $(document).ready(function(){
               pointHoverBackgroundColor: "rgba(59, 89, 152, 1)",
               pointHoverBorderColor: "rgba(59, 89, 152, 1)",
               data: temp
+            },
+            {
+              label: "Feuchtgigkeit",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "rgba(255, 0, 0, 0.75)",
+              borderColor: "rgba(255, 0, 0, 1)",
+              pointHoverBackgroundColor: "rgba(59, 89, 152, 1)",
+              pointHoverBorderColor: "rgba(59, 89, 152, 1)",
+              data: humidity
             }
+            
           ]
         };
   

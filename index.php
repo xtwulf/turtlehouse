@@ -19,11 +19,10 @@
 <?php
 $debug_mode = False;
 if ($debug_mode) {
-  
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-}
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+  }
 
 //phpinfo();
 session_start();
@@ -142,7 +141,7 @@ else {
 ?>
 
 <body id="page-top">
-  <span id="temp_data" style = "display: none;">19,22,10,10,12,10,17,10,12,10,17,10,10,10,10,10,20,30,25,40</span>
+  <!-- <span id="temp_data" style = "display: none;">19,22,10,10,12,10,17,10,12,10,17,10,10,10,10,10,20,30,25,40</span> -->
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar" >
@@ -732,7 +731,7 @@ else {
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
   <script src="vendor/chart.js/Chart.min.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>  
+  <!-- <script src="js/demo/chart-area-demo.js"></script>  -->
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
