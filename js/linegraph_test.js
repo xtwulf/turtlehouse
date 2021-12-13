@@ -34,7 +34,7 @@ $(document).ready(function(){
           ]
         };
   
-        var ctx = $("#mycanvas");
+        var ctx = $("#temp_graph");
   
         var LineGraph = new Chart(ctx, {
           type: 'line',

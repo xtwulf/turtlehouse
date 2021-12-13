@@ -652,17 +652,18 @@ else {
                     </div>
                   </div>
                 </div>
+               <!--  
                 <div class="card-body">
                   <div class="chart-area">
                     <canvas id="myAreaChart"></canvas>
                   </div>
                 </div>
+               -->
 
                 </div>
                 <div class="card-body">
                   <div class="chart-area">
-                    <p>Chart 2 comes here</p>
-                    <canvas id="mycanvas"></canvas>
+                    <canvas id="temp_graph"></canvas>
                   </div>
                 </div>
               </div>
