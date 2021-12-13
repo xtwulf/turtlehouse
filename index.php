@@ -29,7 +29,7 @@ error_reporting(E_ALL);
 session_start();
 
 // Including Database connection
-require_once "pdo.php";
+require_once "/php/pdo.php";
 
 if (isset($_SESSION['test'])) {
     echo $_SESSION['test'];
