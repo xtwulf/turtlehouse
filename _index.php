@@ -29,8 +29,10 @@ if (isset($_SESSION['test'])) {
 $stmt1 = $pdo->query("SELECT * from temperature WHERE id = (SELECT MAX(ID) FROM temperature)");
 $last_set = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
+echo  'last set:';
 print_r($last_set);
-$last_temp = $last_set[0][temp];
+$last_temp = $last_set[0]['temp'];
+echo("<br>");
 
 $stmt2 = $pdo->query("SELECT * from settings");
 $settings = $stmt2->fetchAll(PDO::FETCH_ASSOC);
