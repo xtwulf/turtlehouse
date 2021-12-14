@@ -78,9 +78,9 @@ print(dhtDevice)
 
 
 temp_max = 25
-temp_min = 22
+temp_min = 5
 # interval for getting temp data
-interval = 10.0
+interval = 600.0
 
 # main loop
 while True:
