@@ -636,35 +636,29 @@ else {
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Temperatur</h6>
-                  <div class="dropdown no-arrow">
+                <!--   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                       aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                       aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
+                      <div class="dropdown-header">Graph actions:</div>
                       <a class="dropdown-item" href="#">Action</a>
                       <a class="dropdown-item" href="#">Another action</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Something else here</a>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
-               <!--  
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
+            
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="temp_graph"></canvas>
                 </div>
-               -->
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="temp_graph"></canvas>
-                  </div>
-                </div>
+              </div>
 
-                </div>
+            </div>
                 
               </div>
             </div>
@@ -705,17 +699,6 @@ else {
             </span>
           </div>
         </div>
-
-        <div class="container my-auto py-2">
-          <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - distributed by
-              <b><a href="https://themewagon.com/" target="_blank">themewagon</a></b>
-            </span
-            <span>
-              <div>Icons made by <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            </span>
-          </div>
-        </div>
       </footer>
       <!-- Footer -->
     </div>
@@ -731,13 +714,9 @@ else {
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
   <script src="vendor/chart.js/Chart.min.js"></script>
-  <!-- <script src="js/demo/chart-area-demo.js"></script>  -->
-
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="js/Chart.min.js"></script>
-  <!-- <script type="text/javascript" src="js/linegraph.js"></script> -->
-  <script type="text/javascript" src="js/linegraph_test.js"></script>
+  <script type="text/javascript" src="js/linegraph.js"></script>
 </body>
 
 </html>
