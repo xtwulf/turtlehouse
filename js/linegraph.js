@@ -10,11 +10,6 @@ $(document).ready(function(){
         var date = [];
         var temp = [];
         var humidity = [];
-        
-        var userid = [];
-        var facebook_follower = [];
-        var twitter_follower = [];
-        var googleplus_follower = [];
   
         for(var i in data) {
           
@@ -27,18 +22,19 @@ $(document).ready(function(){
 	var chartdata = {
 	  labels: date,
 	  datasets: [
-	    {
+	      {
 	      	label: "Temperatur",
-		fill: false,
-		lineTension: 0.1,
-		backgroundColor: "rgba(59, 89, 152, 0.75)",
-		borderColor: "rgba(59, 89, 152, 1)",
-		pointHoverBackgroundColor: "rgba(59, 89, 152, 1)",
-		pointHoverBorderColor: "rgba(59, 89, 152, 1)",
-		data: temp
-		}
-	]
-};
+          fill: false,
+          lineTension: 0.1,
+          backgroundColor: "rgba(59, 89, 152, 0.75)",
+          borderColor: "rgba(59, 89, 152, 1)",
+          pointHoverBackgroundColor: "rgba(59, 89, 152, 1)",
+          pointHoverBorderColor: "rgba(59, 89, 152, 1)",
+          data: temp,
+          cubicInterpolationMode: 'monotone'
+		    }
+    	]
+    };
 
 
 
