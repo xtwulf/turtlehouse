@@ -19,6 +19,8 @@ $(document).ready(function(){
           humidity.push(data[i].humidity);
           
         }
+
+  console.log(temp);
   
 	var chartdata = {
 	  labels: date,
