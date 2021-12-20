@@ -1,9 +1,10 @@
 $(document).ready(function(){
+    console.log("Test");
     $.ajax({
       url : "/turtlehouse/php/getdata.php",
       type : "GET",
       success : function(data){
-        console.log('Data: ' + data);
+        //console.log('Data: ' + data);
         data = JSON.parse(data);
   
         
