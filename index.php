@@ -655,7 +655,10 @@ else {
               <div class="card-body">
                 <div class="chart-area">
                   <canvas id="temp_graph"></canvas>
+                  <canvas id="testchart"></canvas>
                 </div>
+
+
               </div>
 
             </div>

@@ -72,6 +72,11 @@ GPIO.setmode(GPIO.BCM)
 # you can pass DHT22 use_pulseio=False if you wouldn't like to use pulseio.
 # This may be necessary on a Linux single board computer like the Raspberry Pi,
 # but it will not work in CircuitPython.
+
+
+RELAIS_1_GPIO = 18
+GPIO.setup(RELAIS_1_GPIO, GPIO.OUT)
+
 dhtDevice = adafruit_dht.DHT11(board.D4, use_pulseio=False)
 
 print(dhtDevice)
@@ -94,22 +99,22 @@ while True:
             humidity = dhtDevice.humidity
             if temperature_c >= temp_max:
                 print('Attention: temperature has reached max level!')
-                #GPIO.output(20, GPIO.HIGH)
-                #GPIO.output(21, GPIO.LOW)
                 status_cover = True
                 status_lamp = False
             if temperature_c <= temp_min:
                 print('Attention: temperature is too low!')
-                #GPIO.output(20, GPIO.HIGH)
-                #GPIO.output(21, GPIO.LOW)
+                # switch on the lamp
+                GPIO.output(RELAIS_1_GPIO, GPIO.HIGH)
                 status_cover = False
                 status_lamp = True
             if (temperature_c < temp_max) and (temperature_c > temp_min):
                 print('Temp is ok')
-                #GPIO.output(20, GPIO.LOW)
-                #GPIO.output(21, GPIO.HIGH)
+                # if temperature is 2 degrees greater than min-level the lamp is switched off
+                if (temperature_c+2 > temp_min):
+                    GPIO.output(RELAIS_1_GPIO, GPIO.LOW)
+                    status_lamp = False
                 status_cover = False
-                status_lamp = False
+                
             print("Temp: {:.1f} C    Humidity: {}% ".format(temperature_c, humidity))
         
             now = datetime.now()
